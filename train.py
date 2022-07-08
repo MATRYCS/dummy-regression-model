@@ -1,3 +1,4 @@
+import os
 import logging
 
 import matplotlib.pyplot as plt
@@ -12,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 class config:
     SEED = 42
-    MLFLOW_TRACKING_URI = 'http://127.0.0.1:5000/'
+    MLFLOW_TRACKING_URI = os.environ.get('MLFLOW_TRACKING_URI', default='http://127.0.0.1:5000/')
     EXPERIMENT_NAME = 'dummy-regression'
     REGISTERED_MODEL_NAME = 'matrycs-dummy-regressor'
 
